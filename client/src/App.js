@@ -3,71 +3,78 @@ import Products from "./components/Products.js";
 import Loader from "./components/Loader.js";
 import Filter from "./components/Filter.js";
 import AddProduct from "./components/AddProduct.js";
-import "./App.css";
 import Navbar from "./components/Navbar.js";
+import "./App.css";
 
 const buttonMenus = [
   {
     name: "All product",
     value: "all",
-    components: <Products />
+    components: <Products />,
   },
   {
     name: "Load more",
     value: "more",
-    components: <Loader />
+    components: <Loader />,
   },
   {
     name: "Filter by category",
     value: "category",
-    components: <Filter filter="category" />
+    components: <Filter filter="category" />,
   },
   {
     name: "Filter by brand",
     value: "brand",
-    components: <Filter filter="brand" />
+    components: <Filter filter="brand" />,
   },
   {
     name: "Add product",
     value: "add",
-    components: <AddProduct />
+    components: <AddProduct />,
   },
 ];
 
+
+
 function App() {
   const [current, setCurrent] = useState(buttonMenus[0]);
-  let currentVal;
+
 
   useEffect(() => {
-    if(localStorage.getItem("menuVal")) {
-      currentVal = localStorage.getItem("menuVal");
-      console.log(buttonMenus.find(currentVal));
-    } else {
-      setCurrent(buttonMenus[0]);
-    }
-  },[]);
+    const curr = localStorage.getItem("menuVal");
+    if(curr) {
+      const currMenu = buttonMenus.find(el => {
+        if(el.value === curr) {
+          return el;
+        }
+      });
 
-  function currentCompHandler(menu, index) {
+      setCurrent(currMenu);
+    }
+  }, []);
+
+  function currentCompHandler(menu) {
     setCurrent(menu);
     localStorage.setItem("menuVal", menu.value);
   }
 
-// 
 
   return (
     <div className="App">
-      <div className="containerNavbar">
+      <div className="menuContainer">
         {buttonMenus.map((menu, index) => {
           return (
-            <Navbar menuItem={menu} key={index} index={index} current={current}  currentCompHandler={currentCompHandler} />
-          )
+            <Navbar
+              menuItem={menu}
+              key={index}
+              index={index}
+              current={current}
+              currentCompHandler={currentCompHandler}
+            />
+          );
         })}
-        <div>
-          {
-            current.components
-          }
-        </div>
       </div>
+      <div>{current.components}</div>
     </div>
   );
 }

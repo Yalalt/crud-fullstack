@@ -1,5 +1,20 @@
 .containerProducts {
     text-align: center;
-    background-color: #fff;
     width: 100%;
+}
+.table tr:nth-child(even) {
+    background-color: #F0F0F0;
+}
+.deleteBtn {
+    width: 50px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: red;
+}
+.editBtn {
+    width: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

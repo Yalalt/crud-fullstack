@@ -1,4 +1,20 @@
 .containerNavbar {
-    display: flex;
-    justify-content: space-evenly;
+    margin: 20px 0;
+  width: 100%;
+}
+.containerNavbar button {
+  padding: 8px 24px;
+  border-radius: 4px;
+  border: none;
+  color: #333;
+  width: 100%;
+}
+.containerNavbar .activeBtn {
+  background-color: #8b89f9;
+  color: #fff;
+}
+
+.containerNavbar .inactiveBtn {
+  background: #fff;
+  color: #333;
 }

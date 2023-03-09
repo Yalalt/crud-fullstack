@@ -1,7 +1,10 @@
 import "../styles/products.css";
+import data from "../ecommerce.json";
 
 export default function Products() {
-  
+  console.clear();
+  console.log(data);
+  console.log(data[4].data);
 
   return (
     <div>
@@ -21,36 +24,20 @@ export default function Products() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td>Edit / Delete</td>
-              </tr>
-              <tr>
-              <th scope="row">2</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td>Edit / Delete</td>
-              </tr>
-              <tr>
-              <th scope="row">3</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td>Edit / Delete</td>
-              </tr>
+              {data[4].data.map((el, index) => {
+                return <tr key={index}>
+                  <th scope="row">{index + 1}</th>
+                  <td>URL</td>
+                  <td>{el.name}</td>
+                  <td>{el.price}$</td>
+                  <td>{el.brand_id}</td>
+                  <td>{el.category_id}</td>
+                  <td>{el.sale}%</td>
+                  <td>
+                    <button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button>
+                  </td>
+                </tr>;
+              })}
             </tbody>
           </table>
         </div>

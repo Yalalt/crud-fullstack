@@ -1,13 +1,18 @@
+import Brand from "./Brand.js";
+import Category from "./Category.js";
 import "../styles/filter.css";
 
-export default function Filter(props) {
-  
 
+export default function Filter(props) {
   return (
     <div>
       <div>
-        <div className="containerProducts">
-          <h2>Filter {props.filter}</h2>
+        <div className="containerFilter">
+          {props.filter === "category" ? (
+            <Category />
+          ) : (
+            <Brand />
+          )}
         </div>
       </div>
     </div>

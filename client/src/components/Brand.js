@@ -1,14 +1,12 @@
-import { useState } from 'react';
-import "../styles/loader.css";
+import "../styles/brand.css";
 
-
-export default function Loader() {
-  const [loadPage, setLoadPage] = useState(5);
-
+export default function Brand() {
   return (
     <div>
       <div>
-      <div className="containerProducts">
+        <div className="containerBrand">
+          <h2> BRAND </h2>
+
           <table className="table">
             <thead>
               <tr>
@@ -75,9 +73,6 @@ export default function Loader() {
               </tr>
             </tbody>
           </table>
-          <div>
-            <button className='btn'>Load more</button>
-          </div>
         </div>
       </div>
     </div>
