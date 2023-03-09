@@ -1,0 +1,20 @@
+.containerNavbar {
+    display: flex;
+}
+.containerNavbar ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.containerNavbar ul li {
+    margin: 0 10px;
+    background-color: #8B89F9;
+    color: #fff;
+    padding: 5px 24px;
+    width: 281px;
+    height: 51px;
+    border-radius: 4px;
+    text-align: center;
+}
