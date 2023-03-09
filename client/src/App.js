@@ -35,7 +35,7 @@ const buttonMenus = [
 ];
 
 function App() {
-  const [current, setCurrent] = useState();
+  const [current, setCurrent] = useState(buttonMenus[0]);
   let currentVal;
 
   useEffect(() => {
