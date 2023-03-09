@@ -1,0 +1,109 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"ecommerce"},
+{"type":"table","name":"brand","database":"ecommerce","data":
+[
+{"id":"2000","name":"Samsung"},
+{"id":"2001","name":"HP"},
+{"id":"2002","name":"Acer"},
+{"id":"2003","name":"Apple"},
+{"id":"2004","name":"Breville"},
+{"id":"2005","name":"Xiaomi"},
+{"id":"2006","name":"Phillips"},
+{"id":"2007","name":"XP-Pen"},
+{"id":"2008","name":"UGreen"},
+{"id":"2009","name":"Beats"},
+{"id":"2010","name":"Nintendo"},
+{"id":"2011","name":"Amazon Basic"},
+{"id":"2012","name":"Celestron"},
+{"id":"2013","name":"Microsoft"}
+]
+}
+,{"type":"table","name":"category","database":"ecommerce","data":
+[
+{"id":"1000","name":"appliances"},
+{"id":"1001","name":"computers"},
+{"id":"1002","name":"tablets"},
+{"id":"1003","name":"electronics"},
+{"id":"1004","name":"console"}
+]
+}
+,{"type":"table","name":"product","database":"ecommerce","data":
+[
+{"id":"4000","name":"4-Door Flex","brand_id":"2000","category_id":"1000","created_date":"2023-03-03","description":"Customize a Samsung Bespoke 3- or 4-door French door refrigerator or 4-Door Flex refrigerator with panels available in multiple colors and finishes.","sale":"20","price":"1222","stock":"12","image":"https:\/\/image-us.samsung.com\/SamsungUS\/home\/home-appliances\/refrigerators\/090321\/rs22t5561sr\/RS22T5561SR_01_SIlver_samsung.jpg?$product-details-jpg$"},
+{"id":"4001","name":"HP Elitebook 840","brand_id":"2001","category_id":"1001","created_date":"2023-03-03","description":"An item that has been used previously. The item may have some signs of cosmetic wear, but is fully operational and functions as intended.","sale":"0","price":"180","stock":"23","image":"https:\/\/i.ebayimg.com\/images\/g\/E8wAAOSwO9Bjmd1t\/s-l1600.jpg"},
+{"id":"4002","name":"HP Probook 430","brand_id":"2001","category_id":"1001","created_date":"2023-03-03","description":"Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery.","sale":"15","price":"265","stock":"4","image":"https:\/\/i.ebayimg.com\/images\/g\/F2oAAOSwbxBimCXu\/s-l1600.jpg"},
+{"id":"4003","name":"Acer Spin 3","brand_id":"2002","category_id":"1001","created_date":"2023-03-03","description":"Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery.","sale":"10","price":"220","stock":"12","image":"https:\/\/i.ebayimg.com\/images\/g\/YLkAAOSwKjpjpOdr\/s-l1600.jpg"},
+{"id":"4004","name":"Macbook Pro M2 16C\/512GB","brand_id":"2003","category_id":"1001","created_date":"2023-03-04","description":"SUPERCHARGED BY M2 PRO OR M2 MAX — Take on demanding projects with the M2 Pro or M2 Max chip.","sale":"10","price":"1399","stock":"8","image":"https:\/\/m.media-amazon.com\/images\/I\/61lYIKPieDL._AC_SX679_.jpg"},
+{"id":"4005","name":"Surface Pro","brand_id":"2013","category_id":"1002","created_date":"2023-03-04","description":"Microsoft Surface Pro 9, 2-in-1 Tablet & Laptop, Intel 12th Gen i7 Fast Processor for Multi-Tasking, 16GB RAM, 256GB SSD.","sale":"5","price":"1399","stock":"4","image":"https:\/\/m.media-amazon.com\/images\/I\/51D3B+8L7DL._AC_SX679_.jpghttps:\/\/m.media-amazon.com\/images\/I\/51D3B+8L7DL._AC_SX679_.jpg"},
+{"id":"4006","name":"Samsung Galaxy Tab","brand_id":"2000","category_id":"1002","created_date":"2023-03-04","description":"SAMSUNG Galaxy Tab S8+ Android Tablet, Large AMOLED Screen, Ultra Wide Camera, S Pen Included, Long Lasting Battery, Graphite","sale":"20","price":"1099","stock":"3","image":"https:\/\/m.media-amazon.com\/images\/I\/81d74GHCPEL._AC_SX679_.jpg"},
+{"id":"4007","name":"Apple IPad Pro 2022","brand_id":"2003","category_id":"1002","created_date":"2023-03-04","description":"2022 Apple 12.9-inch iPad Pro (Wi-Fi, 128GB) - Space Gray (6th Generation)","sale":"0","price":"1094","stock":"3","image":"https:\/\/m.media-amazon.com\/images\/I\/81c+9BOQNWL._AC_SX679_.jpg"},
+{"id":"4008","name":"MacBook Air Gold M1","brand_id":"2003","category_id":"1001","created_date":"2023-03-04","description":"Apple 2020 MacBook Air Laptop M1 Chip, 13 Retina Display, Backlit Keyboard, FaceTime HD Camera, Touch ID.","sale":"0","price":"1099","stock":"5","image":"https:\/\/m.media-amazon.com\/images\/I\/81HZAfCGZ5L._AC_SX679_.jpg"}
+]
+}
+,{"type":"table","name":"specification","database":"ecommerce","data":
+[
+{"id":"3000","product_id":"4000","property":"Height","value":"69 7\/8 inches"},
+{"id":"3001","product_id":"4000","property":"Width","value":"35 3\/4 inches"},
+{"id":"3002","product_id":"4001","property":"Display","value":"14 inch"},
+{"id":"3003","product_id":"4001","property":"CPU","value":"i5-6300U 2,4 GHZ"},
+{"id":"3004","product_id":"4001","property":"Hard","value":"1TB SSD"},
+{"id":"3005","product_id":"4001","property":"RAM","value":"16GB"},
+{"id":"3006","product_id":"4002","property":"Display","value":"13 inch"},
+{"id":"3007","product_id":"4002","property":"CPU","value":"i5-8250U 2,4 GHZ"},
+{"id":"3008","product_id":"4002","property":"Hard","value":"256GB SSD"},
+{"id":"3009","product_id":"4003","property":"Display","value":"14 inch"},
+{"id":"3010","product_id":"4003","property":"CPU","value":"i5-8250U 2,4 GHZ"},
+{"id":"3011","product_id":"4003","property":"Hard","value":"512GB SSD"},
+{"id":"3012","product_id":"4003","property":"RAM","value":"8GB DDR5"},
+{"id":"3013","product_id":"4004","property":"Screen size","value":"14.2 inches"},
+{"id":"3014","product_id":"4004","property":"Color","value":"Space gray"},
+{"id":"3015","product_id":"4005","property":"CPU","value":"Intel Evo i7-2640"},
+{"id":"3016","product_id":"4005","property":"RAM","value":"16GB"},
+{"id":"3017","product_id":"4005","property":"Memory Storage Capacity","value":"256GB"},
+{"id":"3018","product_id":"4005","property":"Color","value":"Forest"},
+{"id":"3019","product_id":"4005","property":"Screen Size","value":"13 inches"},
+{"id":"3020","product_id":"4005","property":"Graphics Coprocessor","value":"Intel Iris Xe Graphics"},
+{"id":"3021","product_id":"4005","property":"Network","value":"WiFi 6E"},
+{"id":"3022","product_id":"4006","property":"Memory Storage Capacity","value":"512GB"},
+{"id":"3023","product_id":"4006","property":"Color","value":"Graphite"},
+{"id":"3024","product_id":"4006","property":"Screen Size","value":"12.4 inches"},
+{"id":"3025","product_id":"4006","property":"Display Resolution","value":"2800 x 1752 pixels"},
+{"id":"3026","product_id":"4006","property":"Network","value":"WiFi 6E"},
+{"id":"3027","product_id":"4007","property":"Memory Storage Capacity","value":"128GB"},
+{"id":"3028","product_id":"4007","property":"Color","value":"Space Gray"},
+{"id":"3029","product_id":"4007","property":"Screen Size","value":"12.9 inches"},
+{"id":"3030","product_id":"4007","property":"Display Resolution","value":"2732 x 2048 pixels"},
+{"id":"3031","product_id":"4007","property":"Network","value":"WiFi"},
+{"id":"3032","product_id":"4008","property":"Model name","value":"MacBook Air"},
+{"id":"3033","product_id":"4008","property":"Screen Size","value":"13.6 incches"},
+{"id":"3034","product_id":"4008","property":"Color","value":"Gold"},
+{"id":"3035","product_id":"4008","property":"Hard Disk Size","value":"256GB"},
+{"id":"3036","product_id":"4008","property":"RAM","value":"8GB"},
+{"id":"3037","product_id":"4008","property":"Graphics Coprocessor","value":"Apple M1"}
+]
+}
+,{"type":"table","name":"user","database":"ecommerce","data":
+[
+{"id":"10000","name":"Yalalt","role":"admin","password":"admin123","email":"yalaltg@gmail.com","contact":"9992-7888, 85061299","address1":"Bayangol 4th province 152A 503","address2":"Khanuul disctrict","user_image":"none","register_date":"2023-03-03"},
+{"id":"10001","name":"manager","role":"moderator","password":"manager123","email":"tuulmanager@gmail.com","contact":"94460357","address1":"Sukhbaatar district 123 43","address2":"Khanuul White hill 4021","user_image":"none","register_date":"2023-03-03"},
+{"id":"10002","name":"Lawrence","role":"client","password":"manager123","email":"ldymick1@kickstarter.com","contact":"(640) 1876281","address1":"67 Cardinal Park","address2":"United state","user_image":"none","register_date":"2023-03-03"},
+{"id":"10003","name":"Hana Chien","role":"client","password":"openopen123","email":"hanachien@gmail.com","contact":"(602) 8185234","address1":"222 Mallory Center","address2":"Central Park","user_image":"none","register_date":"2023-03-04"},
+{"id":"10004","name":"Melisande Basezzi","role":"client","password":"asdasd123","email":"mbasezzi4@reference.com","contact":"(389) 3183472","address1":"4 Novick Court","address2":"NYC DC","user_image":"none","register_date":"2023-03-04"},
+{"id":"10005","name":"Zara Melmore","role":"client","password":"asdasd123","email":"zmelmore6@google.nl","contact":"(796) 2901779","address1":"16 Knutson Road","address2":"8 Jana Parkway","user_image":"none","register_date":"2023-03-04"},
+{"id":"10006","name":"Rolfe Racine","role":"client","password":"12345678","email":"zmelmore6@google.nl","contact":"(711) 23025259","address1":"423 Milwaukee Plaza","address2":"Sun beach Parkway","user_image":"none","register_date":"2023-03-04"}
+]
+}
+,{"type":"table","name":"wishlist","database":"ecommerce","data":
+[
+{"id":"5000","user_id":"10000","product_id":"4001"},
+{"id":"5001","user_id":"10000","product_id":"4003"},
+{"id":"5002","user_id":"10001","product_id":"4000"},
+{"id":"5003","user_id":"10001","product_id":"4001"},
+{"id":"5004","user_id":"10001","product_id":"4002"},
+{"id":"5005","user_id":"10001","product_id":"4003"},
+{"id":"5006","user_id":"10002","product_id":"4003"},
+{"id":"5007","user_id":"10002","product_id":"4001"}
+]
+}
+]

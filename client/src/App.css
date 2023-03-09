@@ -2,3 +2,23 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #333;
 }
+.containerNavbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 18px 24px;
+}
+.containerNavbar button {
+  background: transparent;
+  border: none;
+  color: #333;
+}
+.activeBtn {
+  background-color: #8B89F9;
+  color: #fff;
+}
+
+.inactiveBtn {
+  background: transparent;
+  color: #333;
+}
