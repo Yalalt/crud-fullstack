@@ -1,14 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
+import axios from "axios";
 import "../styles/loader.css";
 
-
 export default function Loader() {
-  const [loadPage, setLoadPage] = useState(5);
+  const [loadPage, setLoadPage] = useState(2);
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    getProductsData();
+  }, []);
+ 
+  useEffect(() => {
+    getProductsData();
+  }, [loadPage]);
+
+  const getProductsData = async () => {
+    try {
+      const rows = await axios.get(`http://localhost:3008/product/?prod_no=${loadPage}`);
+      setProductsData(rows.data);
+  
+      console.count("Data ");
+      console.log("ROWS ==> ", rows.data);
+    } catch (error) {
+      console.log("Error uusllee... ", error);
+    }
+  };
+
+  const loadMoreProduct = () => {
+    setLoadPage((prev) => prev + 2);
+  };
 
   return (
     <div>
       <div>
-      <div className="containerProducts">
+        <div className="containerProducts">
           <table className="table">
             <thead>
               <tr>
@@ -23,60 +48,29 @@ export default function Loader() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
+              {productsData.map((el, index) => {
+                return (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>URL</td>
+                    <td>{el.name}</td>
+                    <td>{el.price}$</td>
+                    <td>{el.brand_name}</td>
+                    <td>{el.cat_name}</td>
+                    <td>{el.sale}%</td>
+                    <td>
+                      <button className="editBtn">Edit</button> /{" "}
+                      <button className="deleteBtn">Delete</button>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
           <div>
-            <button className='btn'>Load more</button>
+            <button className="btn" onClick={() => loadMoreProduct()}>
+              Load more
+            </button>
           </div>
         </div>
       </div>
