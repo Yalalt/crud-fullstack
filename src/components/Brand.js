@@ -1,12 +1,69 @@
+import axios from "axios";
+import { useEffect, useRef, useState } from "react";
 import "../styles/brand.css";
 
 export default function Brand() {
+  const [brands, setBrands] = useState();
+  const [products, setProducts] = useState();
+  const refBrand = useRef();
+
+  useEffect(() => {
+    getBrands();
+  }, []);
+
+  const getBrandByData = async (e) => {
+    e.preventDefault();
+    const id = refBrand.current.value;
+    console.log("ID --> " , id);
+
+    const rows = await axios.get(
+      `http://localhost:3008/product/brand/?name=${id}`,
+      (res, error) => {
+        if (error) {
+          console.log("Error uusllee ", error);
+        }
+      }
+    );
+    setProducts(rows.data);
+    console.count("PRODUCTS ");
+    console.log("ROWS ==> ", rows.data);
+  };
+
+  const getBrands = async () => {
+    try {
+      const rows = await axios.get("http://localhost:3008/brand");
+
+      setBrands([...rows.data.result]);
+
+      console.log("Brands list, Addproduct Window ==> ", rows.data.result);
+    } catch (error) {
+      console.log("Error uusllee brand not found: ", error);
+    }
+  };
+
+
+
   return (
     <div>
       <div>
         <div className="containerBrand">
-          <h2> BRAND </h2>
-
+          <h4> Brand </h4>
+          <div className="addProductForm">
+            <select
+              name="optionBrands"
+              className="optionAddProduct"
+              ref={refBrand}            >
+              {brands &&
+                brands.map((item, index) => {
+                  return (
+                    <option key={index} value={item.id}>
+                      {item.name}
+                    </option>
+                  );
+                })}
+            </select>
+            <button onClick={(e) => getBrandByData(e)}>Find</button>
+          </div>
           <table className="table">
             <thead>
               <tr>
@@ -21,56 +78,20 @@ export default function Brand() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>URL</td>
-                <td>Iphone 13 pro</td>
-                <td>3.500.000$</td>
-                <td>Apple</td>
-                <td>Phone</td>
-                <td>10%</td>
-                <td><button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button></td>
-              </tr>
+            {products && products.map((el, index) => {
+                return <tr key={index}>
+                  <th scope="row">{index + 1}</th>
+                  <td>URL</td>
+                  <td>{el.name}</td>
+                  <td>{el.price}$</td>
+                  <td>{el.brand_name}</td>
+                  <td>{el.cat_name}</td>
+                  <td>{el.sale}%</td>
+                  <td>
+                    <button className="editBtn">Edit</button> / <button className="deleteBtn">Delete</button>
+                  </td>
+                </tr>;
+              })}
             </tbody>
           </table>
         </div>
